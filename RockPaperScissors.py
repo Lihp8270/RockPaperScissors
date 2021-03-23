@@ -19,7 +19,7 @@ moveNames = {
     'S': 'Scissors',
 }
 
-def RockPaperScissors(lastPlayed, lastResult, firstGame):
+def CalculateThrow(lastPlayed, lastResult, firstGame):
     moveDict = {
         1: 'R',
         2: 'P',
@@ -103,7 +103,7 @@ while gamesPlayed < numOfGames:
         else:
             validThrow = 0
 
-    comThrow = RockPaperScissors(lastUserThrow,lastGameResult,firstPlayedGame)
+    comThrow = CalculateThrow(lastUserThrow,lastGameResult,firstPlayedGame)
     outcome = playGame(userThrow, comThrow)
     
     if outcome == 'Oof, tie!':
@@ -116,4 +116,4 @@ while gamesPlayed < numOfGames:
     print('You played ',moveNames[userThrow],' - I play ',moveNames[comThrow])
     print(outcome)
 
-print('\nComp Scores\n-----------\nWins: ',wins,'\nLosses: ',losses,'\nTies: ',ties,'\n\nWin Percentage: ',int((wins/numOfGames*100)),'%')
+print('\nComp Scores\n------------\nWins: ',wins,'\nLosses: ',losses,'\nTies: ',ties,'\n\nWin Percentage: ',int((wins/numOfGames*100)),'%')
